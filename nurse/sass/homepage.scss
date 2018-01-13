@@ -1,0 +1,257 @@
+/**
+ * CONTENTS
+ * 
+ * SETTINGS
+ * variables..............变量集中存储文件
+ * mixin.............宏集中存储文件
+ * media-queries.........媒体查询样式存储文件
+ *
+ * 
+ * TOOLS
+ * normalize...............Compass重置样式文件
+ *
+ * 
+ * COMPONENTS
+ *css3................Compass的css3模块
+ *utilities................Compass的utilities模块
+ *utilities/sprites.........自动生成精灵图
+ *layout................Compass的layout模块
+ *
+ *
+ * BUSNISS
+ * 
+ * BASE
+ * homepage.scss............针对当前主页的样式修饰
+ */
+
+
+@import "normalize-version";//（必须有）
+@import "normalize/base";
+@import "normalize/html5";
+@import "normalize/links";
+
+@import "compass/utilities/sprites";  // 加载compass sprites模块
+$icon-sprite-dimensions: true; //显示图标的宽高 
+@import "homepage/icon/*.png";  
+
+@import "compass/css3";
+@import "compass/utilities";
+@import "compass/layout";
+
+@import "variables", "mixin", "media-queries";
+
+
+%left {
+	@include float(left);
+}
+%right {
+	@include float(right);
+}
+/**
+ * homepage样式
+ */
+* {
+	@include box-sizing(border-box);
+}
+html,
+body {
+	width: 100%;
+	height: 100%;
+	font-size: 625%;
+}
+
+body {
+	font-size: 0.16rem;
+	letter-spacing: 0.02rem;
+}
+
+/* 图标样式*/           
+@include all-icon-sprites; 
+
+/* 头部样式*/
+header {
+	position: fixed;
+	left: 0;top: 0;
+	width: 100%;height: 0.45rem;
+	z-index: 1000;
+
+	@include theme(rgb(95,192,205), #fff);
+
+	h3 {
+		margin: 0;
+		line-height: 0.45rem;
+		text-align: center;
+	}
+
+	span {
+		 @extend %left;
+		@include inline-block;
+		margin:{
+			top: 45px*0.5-37px*0.5;
+			left: 0.1rem;
+		}
+
+	}
+}
+
+/* main样式*/
+.main {
+	position: relative;
+	top: 0.45rem;
+	height: auto!important;
+	min-height: calc(100% - 0.45rem);
+}
+.background {
+	position: relative;
+	color: #fff;
+	height: 3rem;
+	background: url(../images/homepage/background.png) no-repeat;
+	@include background-size(100% 100%);
+
+	.backgroundColor {
+		background: rgba(0,0,0,0.2);
+		height: 100%;
+		text-align: center;
+
+
+		@at-root .portrait {
+			padding-top: 0.2rem;
+			margin-bottom: 0.5rem;
+			img {
+				max-width: 100%;
+			}
+		}
+		@at-root .description {
+			@include inline-block;
+			
+
+			@at-root .nameAge {
+				@include legacy-pie-clearfix;
+				font-size: 0.18rem;
+				.name {
+					@extend %left;
+					font-size: 0.2rem;
+					font-weight: 700;
+				}
+				.age {
+					@extend %right;
+				}
+			}
+
+			@at-root .address {
+				margin-top: 0.1rem;
+
+				@at-root .icon-position {
+					@include inline-block;
+					margin-right: 0.1rem;
+				}
+			}
+			
+		}
+	}
+}
+
+.content {
+	margin: 0;
+	padding: 0;
+
+	li {
+		position: relative;
+		list-style-image: none;
+		list-style-type: none;
+		margin: 0;
+		border-bottom: 1px solid #e1e5e7;
+		padding: 0.2rem;
+
+		&:not([class="title"]) {
+			padding-left: 0.4rem;
+		}
+	}
+
+	@at-root .title span {
+		padding-left: 0.2rem;
+		font: {
+			size: 0.17rem;
+			weight: 540;
+		}
+		border-left: 3px solid #66cccc;
+	}
+
+	@at-root .home {
+		padding-left: 0.3rem;
+	}
+	@at-root .dinner {
+		padding-left: 0.3rem;
+		margin-left: 0.2rem;
+	}
+
+	@at-root .question {
+		color: #999;
+		margin-right: 0.2rem;
+		padding-right: 0.2rem;
+		border-right: 2px solid #e1e5e7;
+		@include vertical-align;
+	}
+	@at-root .answer {
+		@include inline-block;
+		margin-left: 1.3rem;
+		.row4 & {
+			color: red;
+			font-weight: 700;
+		}
+
+		
+
+	}
+
+
+
+	
+}
+
+/*footer样式*/
+.main-foot {
+	width: 100%;
+	height: 0.6rem;
+}
+.footer {
+	@include display-flex;
+	@include flex-direction(row);
+	@include flex-wrap(nowrap);
+	@include justify-content(space-space);
+	position: absolute;
+	bottom: 0.05rem;
+	width: 100%;
+	height: 0.5rem;
+	%button {
+		@include flex(1);
+		@include border-radius(0.05rem);
+		outline: none;
+		font-size: 0.18rem;			
+	}
+	@at-root .messageBtn {
+		@extend %button;
+		background-color: #fff;
+		color: #66cccc;
+		border: 2px solid #66cccc;
+		margin: {
+			right: 0.1rem;
+			left: 0.2rem;
+		}
+	}
+	@at-root .phoneBtn {
+		@extend %button;
+		background-color: #66cccc;
+		color: white;
+		border: 2px solid #66cccc;
+		margin: {
+			right: 0.2rem;
+			left: 0.1rem;
+		}
+	}
+}
+
+@include homepage;
+
+
+

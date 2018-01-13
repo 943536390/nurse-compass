@@ -1,0 +1,14 @@
+@mixin homepage{
+	@media (min-width:768px) {
+	.portrait {
+		padding-top: 0rem;
+		@include vertical-align(calc(-50% - 0.2rem)); 
+		left: 0.2rem;
+	}
+	.description {
+		@include vertical-align;
+		left: 60px+169px;
+	}				
+}
+}
+

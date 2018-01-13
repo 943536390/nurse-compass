@@ -1,0 +1,11 @@
+@mixin theme($bgcolor, $fontcolor){
+	background-color: $bgcolor;
+	color: $fontcolor;
+}
+
+@mixin vertical-align($transformY:-50%,$top:50%) {
+	position: absolute;
+	top: $top;
+	@include translateY($transformY); 
+}
+

@@ -1,0 +1,391 @@
+@charset "UTF-8";
+/**
+ * CONTENTS
+ * 
+ * SETTINGS
+ * variables..............变量集中存储文件
+ * mixin.............宏集中存储文件
+ * media-queries.........媒体查询样式存储文件
+ *
+ * 
+ * TOOLS
+ * normalize...............Compass重置样式文件
+ *
+ * 
+ * COMPONENTS
+ *css3................Compass的css3模块
+ *utilities................Compass的utilities模块
+ *utilities/sprites.........自动生成精灵图
+ *layout................Compass的layout模块
+ *
+ *
+ * BUSNISS
+ * 
+ * BASE
+ * homepage.scss............针对当前主页的样式修饰
+ */
+/*! normalize.css v3.0.0 | Base | MIT License | git.io/normalize */
+/* line 11, C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/compass-normalize-1.5/stylesheets/normalize/_base.scss */
+html {
+  font-family: sans-serif;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+/* line 19, C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/compass-normalize-1.5/stylesheets/normalize/_base.scss */
+body {
+  margin: 0;
+}
+
+/*! normalize.css v3.0.0 | HTML5 Display Definitions | MIT License | git.io/normalize */
+/* line 9, C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/compass-normalize-1.5/stylesheets/normalize/_html5.scss */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
+  display: block;
+}
+
+/* line 29, C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/compass-normalize-1.5/stylesheets/normalize/_html5.scss */
+audio,
+canvas,
+progress,
+video {
+  display: inline-block;
+  vertical-align: baseline;
+}
+
+/* line 40, C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/compass-normalize-1.5/stylesheets/normalize/_html5.scss */
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+/* line 47, C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/compass-normalize-1.5/stylesheets/normalize/_html5.scss */
+[hidden],
+template {
+  display: none;
+}
+
+/*! normalize.css v3.0.0 | Links | MIT License | git.io/normalize */
+/* line 9, C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/compass-normalize-1.5/stylesheets/normalize/_links.scss */
+a {
+  background: transparent;
+}
+
+/* line 15, C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/compass-normalize-1.5/stylesheets/normalize/_links.scss */
+a:active,
+a:hover {
+  outline: 0;
+}
+
+/* line 64, homepage/icon/*.png */
+.icon-sprite, .icon-back, .icon-position, .icon-star {
+  background-image: url('../images/homepage/icon-s9b63494be2.png');
+  background-repeat: no-repeat;
+}
+
+/* line 44, ../sass/homepage.scss */
+header span, .nameAge .name {
+  float: left;
+}
+
+/* line 47, ../sass/homepage.scss */
+.nameAge .age {
+  float: right;
+}
+
+/**
+ * homepage样式
+ */
+/* line 53, ../sass/homepage.scss */
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* line 56, ../sass/homepage.scss */
+html,
+body {
+  width: 100%;
+  height: 100%;
+  font-size: 625%;
+}
+
+/* line 63, ../sass/homepage.scss */
+body {
+  font-size: 0.16rem;
+  letter-spacing: 0.02rem;
+}
+
+/* 图标样式*/
+/* line 84, C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
+.icon-back {
+  background-position: 0 0;
+  height: 37px;
+  width: 22px;
+}
+
+/* line 84, C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
+.icon-position {
+  background-position: 0 -37px;
+  height: 23px;
+  width: 18px;
+}
+
+/* line 84, C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
+.icon-star {
+  background-position: 0 -60px;
+  height: 23px;
+  width: 24px;
+}
+
+/* 头部样式*/
+/* line 72, ../sass/homepage.scss */
+header {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 0.45rem;
+  z-index: 1000;
+  background-color: #5fc0cd;
+  color: #fff;
+}
+/* line 80, ../sass/homepage.scss */
+header h3 {
+  margin: 0;
+  line-height: 0.45rem;
+  text-align: center;
+}
+/* line 86, ../sass/homepage.scss */
+header span {
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  *zoom: 1;
+  *display: inline;
+  margin-top: 4px;
+  margin-left: 0.1rem;
+}
+
+/* main样式*/
+/* line 98, ../sass/homepage.scss */
+.main {
+  position: relative;
+  top: 0.45rem;
+  height: auto !important;
+  min-height: calc(100% - 0.45rem);
+}
+
+/* line 104, ../sass/homepage.scss */
+.background {
+  position: relative;
+  color: #fff;
+  height: 3rem;
+  background: url(../images/homepage/background.png) no-repeat;
+  -moz-background-size: 100% 100%;
+  -o-background-size: 100% 100%;
+  -webkit-background-size: 100% 100%;
+  background-size: 100% 100%;
+}
+/* line 111, ../sass/homepage.scss */
+.background .backgroundColor {
+  background: rgba(0, 0, 0, 0.2);
+  height: 100%;
+  text-align: center;
+}
+/* line 117, ../sass/homepage.scss */
+.portrait {
+  padding-top: 0.2rem;
+  margin-bottom: 0.5rem;
+}
+/* line 120, ../sass/homepage.scss */
+.portrait img {
+  max-width: 100%;
+}
+/* line 124, ../sass/homepage.scss */
+.description {
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  *zoom: 1;
+  *display: inline;
+}
+/* line 128, ../sass/homepage.scss */
+.nameAge {
+  *zoom: 1;
+  font-size: 0.18rem;
+}
+/* line 22, C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
+.nameAge:after {
+  content: "\0020";
+  display: block;
+  height: 0;
+  clear: both;
+  overflow: hidden;
+  visibility: hidden;
+}
+/* line 131, ../sass/homepage.scss */
+.nameAge .name {
+  font-size: 0.2rem;
+  font-weight: 700;
+}
+/* line 141, ../sass/homepage.scss */
+.address {
+  margin-top: 0.1rem;
+}
+/* line 144, ../sass/homepage.scss */
+.icon-position {
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  *zoom: 1;
+  *display: inline;
+  margin-right: 0.1rem;
+}
+
+/* line 154, ../sass/homepage.scss */
+.content {
+  margin: 0;
+  padding: 0;
+}
+/* line 158, ../sass/homepage.scss */
+.content li {
+  position: relative;
+  list-style-image: none;
+  list-style-type: none;
+  margin: 0;
+  border-bottom: 1px solid #e1e5e7;
+  padding: 0.2rem;
+}
+/* line 166, ../sass/homepage.scss */
+.content li:not([class="title"]) {
+  padding-left: 0.4rem;
+}
+/* line 171, ../sass/homepage.scss */
+.title span {
+  padding-left: 0.2rem;
+  font-size: 0.17rem;
+  font-weight: 540;
+  border-left: 3px solid #66cccc;
+}
+/* line 180, ../sass/homepage.scss */
+.home {
+  padding-left: 0.3rem;
+}
+/* line 183, ../sass/homepage.scss */
+.dinner {
+  padding-left: 0.3rem;
+  margin-left: 0.2rem;
+}
+/* line 188, ../sass/homepage.scss */
+.question {
+  color: #999;
+  margin-right: 0.2rem;
+  padding-right: 0.2rem;
+  border-right: 2px solid #e1e5e7;
+  position: absolute;
+  top: 50%;
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+/* line 195, ../sass/homepage.scss */
+.answer {
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  *zoom: 1;
+  *display: inline;
+  margin-left: 1.3rem;
+}
+/* line 198, ../sass/homepage.scss */
+.row4 .answer {
+  color: red;
+  font-weight: 700;
+}
+
+/*footer样式*/
+/* line 213, ../sass/homepage.scss */
+.main-foot {
+  width: 100%;
+  height: 0.6rem;
+}
+
+/* line 217, ../sass/homepage.scss */
+.footer {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  -webkit-justify-content: space-space;
+  justify-content: space-space;
+  position: absolute;
+  bottom: 0.05rem;
+  width: 100%;
+  height: 0.5rem;
+}
+/* line 226, ../sass/homepage.scss */
+.footer .messageBtn, .footer .phoneBtn {
+  -webkit-flex: 1;
+  flex: 1;
+  -moz-border-radius: 0.05rem;
+  -webkit-border-radius: 0.05rem;
+  border-radius: 0.05rem;
+  outline: none;
+  font-size: 0.18rem;
+}
+/* line 232, ../sass/homepage.scss */
+.messageBtn {
+  background-color: #fff;
+  color: #66cccc;
+  border: 2px solid #66cccc;
+  margin-right: 0.1rem;
+  margin-left: 0.2rem;
+}
+/* line 242, ../sass/homepage.scss */
+.phoneBtn {
+  background-color: #66cccc;
+  color: white;
+  border: 2px solid #66cccc;
+  margin-right: 0.2rem;
+  margin-left: 0.1rem;
+}
+
+@media (min-width: 768px) {
+  /* line 3, ../sass/_media-queries.scss */
+  .portrait {
+    padding-top: 0rem;
+    position: absolute;
+    top: 50%;
+    -moz-transform: translateY(calc(-50% - 0.2rem));
+    -ms-transform: translateY(calc(-50% - 0.2rem));
+    -webkit-transform: translateY(calc(-50% - 0.2rem));
+    transform: translateY(calc(-50% - 0.2rem));
+    left: 0.2rem;
+  }
+
+  /* line 8, ../sass/_media-queries.scss */
+  .description {
+    position: absolute;
+    top: 50%;
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    left: 229px;
+  }
+}
