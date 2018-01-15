@@ -9,3 +9,9 @@
 	@include translateY($transformY); 
 }
 
+@mixin vertical-align-before {
+	content: "";
+	height: 100%;
+	vertical-align: middle;
+	display: inline-block;
+}

@@ -1,3 +1,428 @@
-/* Welcome to Compass. Use this file to define print styles.
- * Import this file using the following HTML or equivalent:
- * <link href="/stylesheets/print.css" media="print" rel="stylesheet" type="text/css" /> */
+@charset "UTF-8";
+/**
+ * CONTENTS
+ * 
+ * SETTINGS
+ * variables..............变量集中存储文件
+ * mixin.............宏集中存储文件
+ * media-queries.........媒体查询样式存储文件
+ *
+ * 
+ * TOOLS
+ * normalize...............Compass重置样式文件
+ *
+ * 
+ * COMPONENTS
+ *css3................Compass的css3模块
+ *utilities................Compass的utilities模块
+ *utilities/sprites.........自动生成精灵图
+ *layout................Compass的layout模块
+ *
+ *
+ * BUSNISS
+ * 
+ * BASE
+ * homepage.scss............针对当前主页的样式修饰
+ */
+/*! normalize.css v3.0.0 | Base | MIT License | git.io/normalize */
+/* line 11, C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/compass-normalize-1.5/stylesheets/normalize/_base.scss */
+html {
+  font-family: sans-serif;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+/* line 19, C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/compass-normalize-1.5/stylesheets/normalize/_base.scss */
+body {
+  margin: 0;
+}
+
+/*! normalize.css v3.0.0 | HTML5 Display Definitions | MIT License | git.io/normalize */
+/* line 9, C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/compass-normalize-1.5/stylesheets/normalize/_html5.scss */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
+  display: block;
+}
+
+/* line 29, C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/compass-normalize-1.5/stylesheets/normalize/_html5.scss */
+audio,
+canvas,
+progress,
+video {
+  display: inline-block;
+  vertical-align: baseline;
+}
+
+/* line 40, C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/compass-normalize-1.5/stylesheets/normalize/_html5.scss */
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+/* line 47, C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/compass-normalize-1.5/stylesheets/normalize/_html5.scss */
+[hidden],
+template {
+  display: none;
+}
+
+/*! normalize.css v3.0.0 | Links | MIT License | git.io/normalize */
+/* line 9, C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/compass-normalize-1.5/stylesheets/normalize/_links.scss */
+a {
+  background: transparent;
+}
+
+/* line 15, C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/compass-normalize-1.5/stylesheets/normalize/_links.scss */
+a:active,
+a:hover {
+  outline: 0;
+}
+
+/* line 96, list/icon/*.png */
+.icon-sprite, .icon-Write, .icon-calendar2, .icon-home, .icon-more, .icon-people, .icon-pos2, .icon-position {
+  background-image: url('../images/list/icon-s73d508f0a8.png');
+  background-repeat: no-repeat;
+}
+
+/* line 47, ../sass/nurse-list.scss */
+.icon-position {
+  float: right;
+}
+
+/*引入所有图标*/
+/* line 84, C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
+.icon-Write {
+  background-position: 0 0;
+  height: 47px;
+  width: 47px;
+}
+
+/* line 84, C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
+.icon-calendar2 {
+  background-position: 0 -47px;
+  height: 12px;
+  width: 12px;
+}
+
+/* line 84, C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
+.icon-home {
+  background-position: 0 -59px;
+  height: 20px;
+  width: 23px;
+}
+
+/* line 84, C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
+.icon-more {
+  background-position: 0 -79px;
+  height: 17px;
+  width: 10px;
+}
+
+/* line 84, C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
+.icon-people {
+  background-position: 0 -96px;
+  height: 21px;
+  width: 21px;
+}
+
+/* line 84, C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
+.icon-pos2 {
+  background-position: 0 -117px;
+  height: 12px;
+  width: 10px;
+}
+
+/* line 84, C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
+.icon-position {
+  background-position: 0 -129px;
+  height: 22px;
+  width: 21px;
+}
+
+/* line 55, ../sass/nurse-list.scss */
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* line 58, ../sass/nurse-list.scss */
+html,
+body {
+  width: 100%;
+  height: 100%;
+  font-size: 625%;
+}
+
+/* line 65, ../sass/nurse-list.scss */
+body {
+  font-size: 0.16rem;
+  letter-spacing: 0.02rem;
+  min-width: 310px;
+}
+
+/* line 70, ../sass/nurse-list.scss */
+button {
+  outline: none;
+}
+
+/* line 73, ../sass/nurse-list.scss */
+a:link,
+a:hover,
+a:active,
+a:visited {
+  text-decoration: none;
+}
+
+/*header*/
+/* line 80, ../sass/nurse-list.scss */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 0.5rem;
+  background-color: #5fc0cd;
+  text-align: center;
+  z-index: 1000;
+  min-width: 310px;
+}
+/* line 90, ../sass/nurse-list.scss */
+header:before {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  *zoom: 1;
+  *display: inline;
+  height: 100%;
+  vertical-align: middle;
+}
+/* line 97, ../sass/nurse-list.scss */
+header button {
+  margin: 0;
+  outline: none;
+  border: none;
+  border-radius: 0.05rem;
+  width: 50%;
+  height: 0.4rem;
+  font-size: 0.18rem;
+  letter-spacing: 0.02rem;
+}
+/* line 108, ../sass/nurse-list.scss */
+.group-btn {
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  *zoom: 1;
+  *display: inline;
+  width: 40%;
+  min-width: 150px;
+  background: #55a8b3;
+  border-radius: 0.05rem;
+  vertical-align: middle;
+  font-size: 0;
+  letter-spacing: -4px;
+}
+/* line 118, ../sass/nurse-list.scss */
+.group-btn .btn1 {
+  background: #55a8b3;
+  color: #fff;
+}
+/* line 122, ../sass/nurse-list.scss */
+.group-btn .btn2 {
+  background: #fff;
+  color: #55a8b3;
+}
+/* line 128, ../sass/nurse-list.scss */
+.icon-position {
+  position: relative;
+  top: 50%;
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  right: 0.15rem;
+}
+
+/*nav title*/
+/* line 139, ../sass/nurse-list.scss */
+.title {
+  position: fixed;
+  top: 0.5rem;
+  width: 100%;
+  z-index: 1000;
+  background: #fff;
+  min-width: 310px;
+}
+/* line 147, ../sass/nurse-list.scss */
+.list-title {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+  *zoom: 1;
+  overflow: visible;
+  width: 100%;
+  height: 0.5rem;
+  text-align: center;
+  font-size: 0;
+  letter-spacing: -4px;
+  border-bottom: 1px solid #e1e5e7;
+}
+/* line 49, C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/typography/lists/_inline-block-list.scss */
+.list-title li {
+  list-style-image: none;
+  list-style-type: none;
+  margin-left: 0;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  *zoom: 1;
+  *display: inline;
+  white-space: nowrap;
+}
+/* line 157, ../sass/nurse-list.scss */
+.list-title * {
+  font-size: 0.14rem;
+  letter-spacing: 0.02rem;
+}
+/* line 163, ../sass/nurse-list.scss */
+.dropdown {
+  width: 33.33333%;
+  height: 100%;
+}
+/* line 167, ../sass/nurse-list.scss */
+.dropdown:before {
+  content: "";
+  height: 100%;
+  vertical-align: middle;
+  display: inline-block;
+}
+/* line 171, ../sass/nurse-list.scss */
+.dropdown > a {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  *zoom: 1;
+  *display: inline;
+  width: 100%;
+  border-right: 1px solid #e1e5e7;
+}
+/* line 178, ../sass/nurse-list.scss */
+.caret {
+  right: 0.1rem;
+  position: absolute;
+  top: 50%;
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+/* line 183, ../sass/nurse-list.scss */
+.dropdown-menu {
+  width: 100%;
+}
+
+/*main*/
+/* line 194, ../sass/nurse-list.scss */
+main {
+  position: relative;
+  top: 1.1rem;
+  height: auto !important;
+  min-height: calc(100% - 1.6rem);
+  font-size: 0.15rem;
+}
+/* line 201, ../sass/nurse-list.scss */
+.listgroup {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+/* line 207, ../sass/nurse-list.scss */
+.listitem {
+  margin: 0;
+  padding: 0.1rem;
+  list-style: none;
+  border-bottom: 1px solid #e1e5e7;
+}
+/* line 214, ../sass/nurse-list.scss */
+main span[class|="icon"] {
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  *zoom: 1;
+  *display: inline;
+  margin-right: 0.1rem;
+}
+/* line 219, ../sass/nurse-list.scss */
+.date, .position {
+  color: #999;
+}
+/* line 223, ../sass/nurse-list.scss */
+.content {
+  margin-top: 0.1rem;
+  margin-bottom: 0.1rem;
+  letter-spacing: 0.01rem;
+}
+/* line 231, ../sass/nurse-list.scss */
+.time {
+  margin-left: 0.23rem;
+}
+/* line 235, ../sass/nurse-list.scss */
+.price {
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  *zoom: 1;
+  *display: inline;
+  float: right;
+  color: red;
+  font-weight: 400;
+  font-size: 0.16rem;
+}
+/* line 244, ../sass/nurse-list.scss */
+.icon-more {
+  margin-right: 0.2rem;
+}
+
+/*footer*/
+/* line 251, ../sass/nurse-list.scss */
+footer {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: space-around;
+  justify-content: space-around;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 0.5rem;
+  background: #fff;
+  color: #999;
+  font-size: 0.14rem;
+  min-width: 310px;
+}
+/* line 263, ../sass/nurse-list.scss */
+footer button {
+  border: none;
+  text-align: center;
+  background: transparent;
+}
+/* line 269, ../sass/nurse-list.scss */
+.bg {
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  *zoom: 1;
+  *display: inline;
+  margin-bottom: 0.03rem;
+}
